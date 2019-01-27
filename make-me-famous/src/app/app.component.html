@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Make.Me.Famous!</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a *ngIf="isLoggedIn()" class="nav-link" href="/orders">Orders</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a *ngIf="isLoggedIn()" class="nav-link" href="/account-selector">Switch Accounts</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li *ngIf="!isLoggedIn()" class="nav-item">
+        <a class="nav-link" href="https://auth.arvinbenitez.com/login?response_type=token&client_id=53e2lujj8ocud56on6inso8a25&redirect_uri=https://www.arvinbenitez.com">Login</a>
+      </li>
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a class="nav-link" href="#" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
