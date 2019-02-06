@@ -5,17 +5,20 @@ import { ApiService } from "./services/api.service";
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from "@angular/http";
 import { RouterModule, Routes } from '@angular/router';
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppComponent } from './app.component';
 import { AccountSelectorComponent } from './components/account-selector/account-selector.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { SetupMfaComponent } from './components/setup-mfa/setup-mfa.component';
 
 export const appRoutes: Routes = [
   {
       path: '',
       children: [
           { path: 'orders', component: OrdersComponent },
-          { path: 'account-selector', component: AccountSelectorComponent }
+          { path: 'account-selector', component: AccountSelectorComponent },
+          { path: 'setup-mfa', component: SetupMfaComponent }
       ]
   }
 ];
@@ -24,12 +27,14 @@ export const appRoutes: Routes = [
   declarations: [
     AppComponent,
     AccountSelectorComponent,
-    OrdersComponent
+    OrdersComponent,
+    SetupMfaComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
+    QRCodeModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [AuthService, ApiService],

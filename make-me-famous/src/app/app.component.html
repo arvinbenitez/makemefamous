@@ -14,9 +14,14 @@
         <a *ngIf="isLoggedIn()" class="nav-link" href="/account-selector">Switch Accounts</a>
       </li>
     </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a  class="nav-link" href="/setup-mfa">Setup MFA</a>
+      </li>
+    </ul> 
     <ul class="navbar-nav">
       <li *ngIf="!isLoggedIn()" class="nav-item">
-        <a class="nav-link" href="https://auth.arvinbenitez.com/login?response_type=token&client_id=53e2lujj8ocud56on6inso8a25&redirect_uri=https://www.arvinbenitez.com">Login</a>
+        <a class="nav-link" href="https://auth.arvinbenitez.com/login?response_type=token&client_id=53e2lujj8ocud56on6inso8a25&redirect_uri=https://makemefamous.arvinbenitez.com/assets/login-redirect.html">Login</a>
       </li>
       <li *ngIf="isLoggedIn()" class="nav-item">
         <a class="nav-link" href="#" (click)="logout()">Logout</a>

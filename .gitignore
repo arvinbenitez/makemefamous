@@ -5,7 +5,7 @@
 /tmp
 
 # dependencies
-/node_modules
+make-me-famous/node_modules
 
 # IDEs and editors
 /.idea

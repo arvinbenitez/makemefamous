@@ -10,6 +10,7 @@ export class ApiService {
     }
 
     private urlRoot = "https://uqnwkd53nl.execute-api.us-west-2.amazonaws.com/Prod/";
+    //private urlRoot = "http://localhost:65011/";
 
 
     public accounts(): Observable<any> {
@@ -18,6 +19,14 @@ export class ApiService {
 
     public orders(): Observable<any> {
         return this.get("orders").pipe(map( (x: Response) => x.json()));
+    }
+
+    public enableMfa(user: any): Observable<any> {
+        return this.post("usermanagement/enablemfa", user);
+    }
+
+    public qrCodeUrl(code: string): string {
+        return `${this.urlRoot}qrCode?code=${code}`
     }
 
     public startSession(accountId: number): Observable<any>{
