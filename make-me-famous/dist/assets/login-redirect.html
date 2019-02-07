@@ -21,6 +21,7 @@
        var params = getQueryStrings(window.location.href);
        if (params.id_token) {
            window.localStorage.setItem("token", params.id_token);
+           window.localStorage.setItem("accesstoken", params.access_token);
        }
        window.location = "/account-selector";
     })();

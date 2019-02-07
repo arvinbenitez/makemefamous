@@ -13,7 +13,7 @@ export class SetupMfaComponent implements OnInit {
   name: string;
   password: string;
   qrCode:string;
-  mfaRegistered: boolean;
+  mfaRegistered: boolean = false;
   qrCodeUrl: string;
   ngOnInit() {
   }
