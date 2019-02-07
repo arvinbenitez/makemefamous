@@ -22,7 +22,7 @@ export class AccountSelectorComponent implements OnInit {
   select(account: any): void {
      this.apiService.startSession(account.id).subscribe(x=> {
         this.authService.setAccount(account.name, account.id);
-        window.location.href = "/";
+        window.location.href = "/orders";
      });
   }
 }

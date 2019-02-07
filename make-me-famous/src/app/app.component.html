@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#"><img src="assets/make-me-famous-small.jpg" title="Make Me Famous"></a>
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"><img src="assets/make-me-famous-small.jpg" title="Make Me Famous" height="50px" width="50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,7 +11,7 @@
       <li *ngIf="isLoggedIn()" class="nav-item">
         <a *ngIf="isLoggedIn()" class="nav-link" href="/account-selector">Switch Accounts</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="isLoggedIn()" class="nav-item">
         <a  class="nav-link" href="/setup-mfa">Setup MFA</a>
       </li>
     </ul>
@@ -24,5 +24,18 @@
       </li>
     </ul>
   </div>
-</nav>
+</nav> -->
+<div class="bg-img">
+    <div class="container">
+      <div class="topnav">
+        <a href="#home"><img src="assets/make-me-famous-small.jpg" title="Make Me Famous" height="30px" width="30px"></a>
+        <a *ngIf="isLoggedIn()" href="/orders">Orders</a>
+        <a *ngIf="isLoggedIn()" href="/account-selector">Switch Account</a>
+        <a *ngIf="isLoggedIn()" href="/setup-mfa">Setup MFA</a>
+        <a *ngIf="!isLoggedIn()" href="https://auth.arvinbenitez.com/login?response_type=token&client_id=53e2lujj8ocud56on6inso8a25&redirect_uri=https://makemefamous.arvinbenitez.com/assets/login-redirect.html">Login</a>
+        <a *ngIf="isLoggedIn()" href="#" (click)="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
 <router-outlet></router-outlet>
+<div></div>

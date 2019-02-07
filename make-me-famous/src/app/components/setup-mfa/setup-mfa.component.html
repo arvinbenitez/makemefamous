@@ -2,6 +2,7 @@
 
   <div class="row">
 
+    <div class="col-sm-4"></div>
     <aside class="col-sm-4">
       <div class="card">
         <article [hidden]="qrCode" class="card-body">
@@ -28,7 +29,7 @@
             <div class="form-group">
               <button class="btn btn-primary btn-block" (click)="enableMFA(username.value, password.value)"> Enable MFA </button>
             </div> <!-- form-group// -->
-            <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+            <!-- <p class="text-center"><a href="#" class="btn">Forgot password?</a></p> -->
           </form>
         </article>
         <article *ngIf="qrCode && !mfaRegistered" class="card-body">
@@ -56,5 +57,7 @@
         </article>
       </div> <!-- card.// -->
     </aside> <!-- col.// -->
+    
+    <div class="col-sm-4"></div>
   </div> <!-- row.// -->
 </div>

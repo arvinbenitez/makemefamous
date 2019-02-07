@@ -1,7 +1,17 @@
 <div class="container">
-    <div class="row">
-        <ul class="list-group"  *ngFor="let account of accounts" >
+  <div class="row">
+    <div class="col-4"></div>
+    <aside class="col-4">
+      <div class="card">
+        <article class="card-body">
+          <h4 class="card-title text-center mb-4 mt-1">Select Account</h4>
+          <hr>
+          <ul class="list-group" *ngFor="let account of accounts">
             <li class="list-group-item" (click)="select(account)">{{account.name}}</li>
-      </ul>
-    </div>
+          </ul>
+        </article>
+      </div> <!-- card.// -->
+    </aside> <!-- col.// -->
+    <div class="col-4"></div>
+  </div>
 </div>

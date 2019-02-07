@@ -3,5 +3,10 @@
 }
 
 .list-group-item:hover {
-    background-color: antiquewhite;
+    background-color: #007bff;
+    color: aliceblue;
+}
+
+div.container {
+    padding-top:100px;
 }
